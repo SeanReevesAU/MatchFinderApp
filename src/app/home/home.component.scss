@@ -1,0 +1,42 @@
+.home-container {
+    height: 100%;
+    width: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(3, 3, 3, 0.808);
+}
+
+.match-finder-card {
+    min-height: 350px;
+    width: 500px;
+    height: fit-content;
+    border: 0.5px solid indigo;
+    overflow-wrap: break-word;
+}
+h1 {
+    display: flex;
+    align-self: center;
+    justify-content: center;
+}
+mat-form-field {
+    width: 100%;
+    max-height: 300px;
+    font-size: 18px;
+    padding: 8px;
+}
+
+button {
+    width: 100%;
+    height: auto;
+    font-size: 18px;
+    padding: 8px;
+}
+
+#matchSummary {
+    padding: 8px;
+    font-size: 18px;
+    font-weight: 500;
+    border-style: solid;
+    border: thick;
+}

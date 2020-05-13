@@ -1,0 +1,50 @@
+<div class="home-container">
+  <mat-card class="match-finder-card">
+    <mat-card-content>
+      <h1>MatchFinder</h1>
+      <form [formGroup]="matchfinderForm" (ngSubmit)="onSubmit()">
+        <mat-form-field>
+          <mat-label>Text:</mat-label>
+          <input
+            matInput
+            placeholder="haystack"
+            type="text"
+            formControlName="textControl"
+          />
+          <mat-error
+            *ngIf="matchfinderForm.controls.textControl.hasError('required')"
+          >
+            This field is <strong>required</strong>
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-label>Subtext:</mat-label>
+          <input
+            matInput
+            placeholder="needle"
+            type="text"
+            formControlName="subtextControl"
+          />
+          <mat-error
+            *ngIf="matchfinderForm.controls.subtextControl.hasError('required')"
+          >
+            This field is <strong>required</strong>
+          </mat-error>
+        </mat-form-field>
+
+        <button
+          mat-flat-button
+          color="primary"
+          type="submit"
+          [disabled]="!matchfinderForm.valid"
+        >
+          Match!
+        </button>
+      </form>
+      <div *ngIf="showMatchSummary" id="matchSummary">
+        {{ getMatchSummary() }}
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>
