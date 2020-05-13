@@ -2,7 +2,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { HomeComponent } from './home.component';
 import { MatchService } from '../services/match.service';
-import { MatchResponse } from 'src/models/MatchResponse';
+import { MatchResponse } from 'src/app/models/MatchResponse';
 import { of, throwError } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { MatCardModule } from '@angular/material/card';
@@ -63,7 +63,7 @@ describe('HomeComponent', () => {
 
     it('should display success message and correct match summary', () => {
       let element = fixture.debugElement.nativeElement;
-      expect(component.errorMessage).toBeUndefined();
+      expect(component.errorMessage).toBeNull();
       expect(component.showMatchSummary).toBeTrue();
       expect(element.querySelector('#matchSummary').textContent).toBe(
         ' Successful Match! Subtext was found at: 1,2,3 '
@@ -75,7 +75,7 @@ describe('HomeComponent', () => {
       fixture.detectChanges();
 
       let element = fixture.debugElement.nativeElement;
-      expect(component.errorMessage).toBeUndefined();
+      expect(component.errorMessage).toBeNull();
       expect(component.showMatchSummary).toBeTrue();
       expect(element.querySelector('#matchSummary').textContent).toBe(
         ' No matches found. '
